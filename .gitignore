@@ -1,0 +1,11 @@
+//Text and LaTEX Files
+*.pdf
+*.aux
+*.tex
+.fls
+.out
+.synctex.gz
+
+*.zip
+*.venv
+**/uv.lock
