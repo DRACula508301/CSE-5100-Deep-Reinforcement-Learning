@@ -27,6 +27,10 @@ def main():
     selfish_env = make_vec_env(selfish_env, args)
     args.num_envs = selfish_env.num_envs
 
+    # Recalculate batch sizes because num_envs has changed
+    args.batch_size = int(args.num_envs * args.num_steps)
+    args.minibatch_size = int(args.batch_size // args.num_minibatches)
+
     # Train selfish agent here using selfish_env
     train(selfish_env, args)
     
